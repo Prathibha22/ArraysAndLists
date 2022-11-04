@@ -1,15 +1,17 @@
+import java.util.Arrays;
+
 public class AverageDoubleArrays {
 
 
 // Complete these methods
 
     public int count(double[] aa) {
-        return 0;
+        return aa.length;
     }
 
     public int sum(double[] aa) {
 
-        return 0;
+        return (int) Math.round(Arrays.stream(aa).sum());
     }
 
     public int average(double[] aa) {
