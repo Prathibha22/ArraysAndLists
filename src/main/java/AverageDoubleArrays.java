@@ -15,7 +15,10 @@ public class AverageDoubleArrays {
     }
 
     public int average(double[] aa) {
-        return 0;
+        if(aa.length>0)
+            return Math.round(sum(aa)/aa.length);
+        else
+            return 0;
     }
 
 }

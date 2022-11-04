@@ -16,16 +16,25 @@ class AverageDoubleArraysTest {
 
     @Test
     void count() {
-        assertEquals(null, "");
+        double aa[]={5.6,7.8,9.2};
+        int expected=3;
+        AverageDoubleArrays obj=new AverageDoubleArrays();
+        assertEquals(expected, obj.count(aa));
     }
 
     @Test
     void sum() {
-        assertEquals(null, "");
+        double aa[]={5.6,7.8,9.2};
+        int expected=23;
+        AverageDoubleArrays obj=new AverageDoubleArrays();
+        assertEquals(expected, obj.sum(aa));
     }
 
     @Test
     void average() {
-        assertEquals(null, "");
+        double aa[]={5.6,7.8,9.2};
+        int expected=7;
+        AverageDoubleArrays obj=new AverageDoubleArrays();
+        assertEquals(expected, obj.average(aa));
     }
 }
