@@ -39,7 +39,10 @@ class LoadAndStoreTest {
 
     @Test
     void loadDoubleArrayListFromFile() {
-        assertEquals(null, "");
+        ArrayList<Double> expected=new ArrayList<>(Arrays.asList(4.4,5.5,6.34,11.0001,13.004,8.7,9.97060,7.4532,14.5,18.00023132123));
+       String filename="testDoubleData2.txt";
+       LoadAndStore obj=new LoadAndStore();
+        assertEquals(expected, obj.loadDoubleArrayListFromFile(filename));
     }
 
     @Test

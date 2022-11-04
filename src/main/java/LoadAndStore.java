@@ -3,7 +3,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class LoadAndStore {
 
@@ -16,6 +15,8 @@ public class LoadAndStore {
     }
 
     public ArrayList<Integer> loadIntegerArrayListFromFile(String filename) {
+
+
         // Creating an object of BufferedReader class
         BufferedReader br = null;
         try {
@@ -48,7 +49,15 @@ public class LoadAndStore {
 
     public double[] loaddoubleArrayFromFile(String filename) { return new double[]{}; }
 
-    public ArrayList<Double> loadDoubleArrayListFromFile(String filename) { return null; }
+    public ArrayList<Double> loadDoubleArrayListFromFile(String filename) {
+
+       ArrayList<String> alString= loadStringArrayListFromFile(filename);
+       ArrayList<Double> alDouble=new ArrayList<Double>();
+       for(String str:alString)
+           alDouble.add(Double.parseDouble(str));
+
+        return alDouble;
+    }
 
     // use testStringData3.txt to test
 
@@ -77,10 +86,7 @@ public class LoadAndStore {
                 e.printStackTrace();
             }
         }
-         for(String k :result)
-             System.out.println(k);
         return result;
-
     }
 
     //
