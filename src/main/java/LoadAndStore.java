@@ -3,6 +3,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class LoadAndStore {
 
@@ -53,7 +54,34 @@ public class LoadAndStore {
 
     public String[] loadStringArrayFromFile(String filename) { return null; }
 
-    public ArrayList<String> loadStringArrayListFromFile(String filename) { return null; }
+    public ArrayList<String> loadStringArrayListFromFile(String filename) {
+        // Creating an object of BufferedReader class
+        BufferedReader br = null;
+        try {
+            br = new BufferedReader(new FileReader(filename));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        String line ="";
+        ArrayList<String> result = new ArrayList<String>();
+
+        while (true) {
+            try {
+                if ((line = br.readLine()) == null) break; // break loop at end of file
+                if (line.startsWith("//")) continue; // ignore "//" comment lines
+                String str = line;
+                result.add(str);
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+            }
+        }
+         for(String k :result)
+             System.out.println(k);
+        return result;
+
+    }
 
     //
     // Finally:
