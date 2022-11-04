@@ -29,12 +29,18 @@ class LoadAndStoreTest {
 
     @Test
     void loadIntegerArrayListFromFile() {
-        assertEquals(null, "");
+        ArrayList<Integer> expected=new ArrayList<Integer>(Arrays.asList(4,5,6,11,13,8,9,7,14,18));
+        String fileName="testIntegerData1.txt";
+        LoadAndStore obj=new LoadAndStore();
+        assertEquals(expected, obj.loadIntegerArrayListFromFile(fileName));
     }
 
     @Test
     void loaddoubleArrayFromFile() {
-        assertEquals(null, "");
+        double[] expected={4.4,5.5,6.34,11.0001,13.004,8.7,9.97060,7.4532,14.5,18.00023132123};
+        String filename="testDoubleData2.txt";
+        LoadAndStore obj=new LoadAndStore();
+        assertArrayEquals(expected, obj.loaddoubleArrayFromFile(filename));
     }
 
     @Test
@@ -47,7 +53,11 @@ class LoadAndStoreTest {
 
     @Test
     void loadStringArrayFromFile() {
-        assertEquals(null, "");
+        String[] expected={"4.4","5.5","Foo","11.0001","Bar","Lost in Space","Lido Shuffle",
+                "How much data was destroyed?","I think therefore I compute","0","NaN","ZipCode Rocks!"};
+        String fileName="testStringData3.txt";
+        LoadAndStore obj=new LoadAndStore();
+        assertArrayEquals(expected, obj.loadStringArrayFromFile(fileName));
     }
 
     @Test
